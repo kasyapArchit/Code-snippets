@@ -7,6 +7,7 @@ void addEdge(vector<int> adj[], int u, int v){
     adj[v].push_back(u);
 }
 
+// go till the end of the path
 void DFSUtil(int u, vector<int> adj[], vector<bool> &visited){
     visited[u] = true;
     cout << u << " ";

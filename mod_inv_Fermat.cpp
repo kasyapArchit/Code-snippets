@@ -11,8 +11,7 @@ int power(int x, unsigned int y, unsigned int m);
 
 // Function to find modular inverse of a under modulo m
 // Assumption: m is prime
-void modInverse(int a, int m)
-{
+void modInverse(int a, int m){
     int g = gcd(a, m);
     if (g != 1)
         cout << "Inverse doesn't exist";

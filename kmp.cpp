@@ -28,16 +28,15 @@ typedef vector<int> vi;
 typedef vector<lli> vlli;
 typedef vector<pair<int,int>> vii;
 
+// generate lps(longest prefix which is also a suffix) array
 vi prefix(const string &s){
     int n = sz(s);
     vi p(n);
 
     int j=0, i=1;
-    while(i<n)
-    {
+    while(i<n){
         if(s[i]==s[j]) p[i++]=++j;
-        else
-        {
+        else{
             if(j!=0) j = p[j-1];
             else p[i++] = 0;
         }
@@ -52,19 +51,16 @@ void KMP(string pat, string txt){
 
     int i = 0; // index for txt[]
     int j = 0; // index for pat[]
-    while (i < N)
-    {
+    while (i < N){
         if (pat[j] == txt[i]) j++, i++;
 
-        if (j == M)
-        {
+        if (j == M){
             printf("Found pattern at index %d ", i - j);
             j = lps[j - 1];
         }
 
         // mismatch after j matches
-        else if (i < N && pat[j] != txt[i])
-        {
+        else if (i < N && pat[j] != txt[i]){
             // Do not match lps[0..lps[j-1]] characters,
             // they will match anyway
             if (j != 0) j = lps[j - 1];

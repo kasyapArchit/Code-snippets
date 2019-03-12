@@ -5,10 +5,8 @@ using namespace std;
 typedef long long int lli;
 
 // Property
-lli gcd(lli a, lli b)
-{
-    while(a != b)
-    {
+lli gcd(lli a, lli b){
+    while(a != b){
         if(a>b)
             a -= b;
         else
@@ -18,10 +16,16 @@ lli gcd(lli a, lli b)
 }
 
 // Euclid method
-lli gcd(lli a, lli b)
-{
+lli gcd(lli a, lli b){
     if(a == 0)
         return b;
 
+    return gcd(b%a, a);
+}
+
+// ------------------------------------------------------------------------------
+lli gcd(lli a, lli b){
+    if (a == 0)
+        return b;
     return gcd(b%a, a);
 }

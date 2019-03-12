@@ -38,6 +38,7 @@ int main(){
     out.close();
 
     // fixing the size of the output decimal
+    double c,d;
     cout << fixed;
     cout << setprecision(9) << min(c, d);
 

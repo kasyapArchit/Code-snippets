@@ -3,8 +3,8 @@
 
 using namespace std;
 
-vector<bool> v;
-vector<vector<int>> g;
+vector<bool> v; // visited or not
+vector<vector<int>> g; // graph
 
 void edge(int a, int b){
     g[a].pb(b);
