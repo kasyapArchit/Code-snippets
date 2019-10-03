@@ -29,6 +29,7 @@ typedef vector<lli> vlli;
 typedef vector<pair<int,int>> vii;
 
 // generate lps(longest prefix which is also a suffix) array
+// prefix function
 vi prefix(const string &s){
     int n = sz(s);
     vi p(n);
